@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <servlet>
+        <servlet-name>pReg</servlet-name>
+        <servlet-class>com.servelet.pReg</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>docLogin</servlet-name>
+        <servlet-class>com.servelet.docLogin</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ptApp</servlet-name>
+        <servlet-class>com.DB.ptApp</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>pApp</servlet-name>
+        <servlet-class>com.servelet.pApp</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>pReg</servlet-name>
+        <url-pattern>/pReg</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>docLogin</servlet-name>
+        <url-pattern>/docLogin</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ptApp</servlet-name>
+        <url-pattern>/ptApp</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>pApp</servlet-name>
+        <url-pattern>/pApp</url-pattern>
+    </servlet-mapping>
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+    <welcome-file-list>
+        <welcome-file>faces/main.html</welcome-file>
+    </welcome-file-list>
+</web-app>
