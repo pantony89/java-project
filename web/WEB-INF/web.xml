@@ -46,6 +46,6 @@
         </session-timeout>
     </session-config>
     <welcome-file-list>
-        <welcome-file>faces/docLogin.jsp</welcome-file>
+        <welcome-file>faces/doctorLogin.jsp</welcome-file>
     </welcome-file-list>
 </web-app>
