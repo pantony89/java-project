@@ -7,30 +7,18 @@
 package com.servelet;
 
 import com.Database;
-import com.doctor;
 import java.io.IOException;
 import java.io.PrintWriter;
-import static java.lang.System.out;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.HashSet;
-import java.util.Set;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 /**
  *
  * @author c0633176
  */
-public class docLogin extends HttpServlet {
+public class docCom extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -49,10 +37,10 @@ public class docLogin extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet docLogin</title>");            
+            out.println("<title>Servlet docCom</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet docLogin at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet docCom at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -84,19 +72,10 @@ public class docLogin extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String docId=request.getParameter("docid");
-        String pass=request.getParameter("pass");
-        Database db=new Database();  
-        if(db.dLogin(docId, pass)){
-            String docName=db.getLoginDocName(docId);
-            HttpSession session=request.getSession();
-            session.setAttribute("docUser", docName);
-            session.setAttribute("docId", docId);
-            response.sendRedirect("docmain.jsp");
-      }else{
-            request.setAttribute("err", "User Name or Password Mismatches");
-            response.sendRedirect("doctorLogin.jsp");
-        }
+        //processRequest(request, response);
+        Database d=new Database();
+        d.commentForPateintSick(request.getParameter("docName"), request.getParameter("ptEmail"), request.getParameter("comment"));
+        request.getRequestDispatcher("docmain.jsp").forward(request, response);
     }
 
     /**

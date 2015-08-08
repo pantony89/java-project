@@ -46,8 +46,17 @@
         <div id="page">
 	<div id="splash" class="twocols">
             <div id="doc">
+                <style>
+                    table,th,td {
+                         border: 1px solid black;
+                             border-collapse: collapse;
+                            }
+                            th,td{  
+                                padding: 10px;
+                            }
+                </style>
         <%
-            out.println("<h1> Hi"+session.getAttribute("docUser")+"</h1>");
+            out.println("<h1>Hello Doctor :"+session.getAttribute("docUser")+"</h1><br><h3>Here Is your Patient info</h3><br>");
         Database d=new Database();
         ResultSet r=d.docWiseAppDetails(session.getAttribute("docId").toString());
         out.println("<table><tr><th>Patient Name</th><th>Gender</th><th>Age</th><th>Apt Time</th><th>Email Id</th><th>Diagnosis</th></tr>");
@@ -56,6 +65,9 @@
         }
         out.println("</table>");
     %>
+    <p></p>
+    <h2> Doctor You Should click the Patient <Strong>EMail-ID</strong> to give them the Instructions to Follow
+    </h2>
     <doc>
     </div>
     </div>

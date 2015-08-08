@@ -13,8 +13,8 @@
     </head>
     <body>
         <form action="commentretirve.jsp" method="post">
-            <input type="email" name="email"/>
-            <input type="text" name="doc"/>
+            Email:  <input type="email" name="email"/><br>
+           Doctor Name: <input type="text" name="doc"/>
             <input type="submit" value="Submit"/>
         </form>
     </body>

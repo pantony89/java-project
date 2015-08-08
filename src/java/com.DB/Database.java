@@ -167,6 +167,47 @@ public class Database {
         }
         return r;
     }
+    
+    public String getLoginDocName(String docId){
+        String docname="";
+        try {
+            Connection con=getConnection();
+            PreparedStatement st=con.prepareStatement("SELECT firstName FROM doctor WHERE Doctorid=?");
+            st.setString(1, docId);
+            ResultSet r=st.executeQuery();
+            while(r.next()){
+                docname=r.getString("firstName");
+            }
+        } catch (SQLException e) {
+        }
+        return docname;
+    }
+    
+    public void commentForPateintSick(String docname,String pt_email,String comments){
+        try {
+            Connection con=getConnection();
+            PreparedStatement st=con.prepareStatement("INSERT INTO doc_comments VALUES(?,?,?)");
+            st.setString(1, docname);
+            st.setString(2, pt_email);
+            st.setString(3, comments);
+            st.executeUpdate();
+        } catch (SQLException e) {
+            
+        }
+    }
+    
+    public ResultSet retriveComment(String ptName, String doc){
+        ResultSet rs=null;
+        try {
+            Connection con=getConnection();
+            PreparedStatement st=con.prepareStatement("SELECT * FROM doc_comments WHERE docname=? AND pt_email=?");
+            st.setString(1, doc);
+            st.setString(2, ptName);
+            rs=st.executeQuery(); 
+        } catch (Exception e) {
+        }
+        return rs;
+    }
    
    }
 
