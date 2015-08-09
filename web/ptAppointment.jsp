@@ -28,9 +28,9 @@
 	
     <div id="menu">
 <ul>
-  <li><a href="main.html">Home</a></li>
+  <li><a href="index.jsp">Home</a></li>
   <li><a href="doctorLogin.jsp">doctor</a></li>
-  <li><a href="patient.jsp">patient</a></li>
+  <li><a href="patientApp.jsp">patient</a></li>
   <li><a href="contact.jsp">Contact</a></li>
   <li><a href="about.jsp">About</a></li>
 </ul>
@@ -94,10 +94,12 @@
                   Email:<input type="text" name="email" id="doa" required/><br>
                   Diagnosis:<input type="text" name="diagno" id="doa" required/><br>
             <input type="submit" value="Submit"/>
+               <input type="reset" value="Reset"/>
                 </tbody>
             </table>
             </centre>
         </form>
+                 
 		</div>
 	</div>
 
