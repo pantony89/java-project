@@ -73,26 +73,27 @@
                     
                 </thead>
                 <tbody>
-            Name: <input type="text" name="ptName" required><br>
-            Age : <input type="text" name="age" required><br>
-            Gender:<input type="radio" name="gender"  value="Male"> Male <input type="radio" name="gender" value="Female" required> Female<br>
-            Doctor:<select name="doc" required>
+                <p> Name: <input type="text" name="ptName" required></p>
+                <p>Age : <input type="text" name="age" required></p>
+            <p>Gender:<input type="radio" name="gender"  value="Male"> Male <input type="radio" name="gender" value="Female" required> Female<br>
+            </p>
+            <p> Doctor:<select name="doc" required>
                 <%
                     for(int i=0;i<doc.size();i++){
                         out.println("<option value='"+doc.get(i)+"'>"+doc.get(i)+"</option>");
                     }
                 %>
-            </select><br>
-            Appointment Date:<input type="text" name="doa" id="doa"/><br>
-            Time: <select name="time">
+                </select></p>
+                <p> Appointment Date:<input type="text" name="doa" id="doa"/></p>
+            <p>Time: <select name="time">
                     <%
                        for(int i=0;i<time.size();i++){
                             out.println("<option value='"+time.get(i)+"'>"+time.get(i)+"</option>");
                        } 
                     %>                
-                  </select><br>
-                  Email:<input type="text" name="email" id="doa" required/><br>
-                  Diagnosis:<input type="text" name="diagno" id="doa" required/><br>
+                </select></p>
+                <p>Email:<input type="text" name="email" id="doa" required/></p>
+                <p>   Diagnosis:<input type="text" name="diagno" id="doa" required/></p>
             <input type="submit" value="Submit"/>
                <input type="reset" value="Reset"/>
                 </tbody>

@@ -1,11 +1,3 @@
-<%-- 
-    Document   : patientReg
-    Created on : 4-Aug-2015, 8:05:33 PM
-    Author     : c0633176
---%>
-
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -25,7 +17,7 @@
 	
     <div id="menu">
 <ul>
-  <li><a href="main.html">Home</a></li>
+  <li><a href="index.jsp">Home</a></li>
   <li><a href="doctorLogin.jsp">doctor</a></li>
   <li><a href="patientApp.jsp">patient</a></li>
   <li><a href="contact.jsp">Contact</a></li>
@@ -46,65 +38,54 @@
 		</div>
 		<div class="col2">
 			<h2 class="title">Important</h2>
-			<ul class="list">
-				<li><a href="http://www.who.int/dietphysicalactivity/en/index.html">Global Strategy on Diet, Physical Activity and Health</a></li>
-				<li><a href="http://www.who.int/chp/en/index.html">Chronic diseases and health promotion;</a></li>
-				<li><a href="http://www.who.int/maternal_child_adolescent/en/">Maternal, newborn, child and adolescent health;</a></li>
-			</ul>
+			
+<form method="post" action="docLogin">
+            <center>
+            <table  cellpadding="3">
+                <thead>
+                    <tr>
+                        <th colspan="2">Doctor Login Here</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Doctor ID</td>
+                        <td><input type="text" name="docid" value=""  required/></td>
+                    </tr>
+                    <tr>
+                        <td>Password</td>
+                        <td><input type="password" name="pass" value="" required /></td>
+                    </tr>
+                    <tr>
+                        <td><input type="submit" value="Login" /></td>
+                        <td><input type="reset" value="Reset" /></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">Yet Not Registered!! <a href="doctorReg.jsp">Register Here</a></td>
+                    </tr>
+                </tbody>
+            </table>
+            </center>
+        </form>
+			
 		</div>
 		<div style="clear: both;">&nbsp;</div>
 	</div>
   
 	<div id="content">
 		<div>
-	<form method="post" action="pReg">
-            <center>
-            <table >
-                <thead>
-                    <tr>
-                        <th colspan="2">Patient Registration</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    
-                        <td>Name</td>
-                        <td><input type="text" name="name" value="" required /></td>
-                    </tr>
-                    <tr>
-                        <td>Email</td>
-                        <td><input type="text" name="email" value="" /></td>
-                    </tr>
-                    <tr>
-                        <td>User Name</td>
-                        <td><input type="text" name="uname" value="" /></td>
-                    </tr>
-                    <tr>
-                        <td>Password</td>
-                        <td><input type="password" name="pass" value="" /></td>
-                    </tr>
-                    <tr>
-                        <td>decease</td>
-                        <td><input type="text" name="decease" value="" /></td>
-                    </tr>
-                    <tr>
-                        <td>gender</td>
-                        <td><input type="text" name="gender" value="" /></td>
-                    </tr>
-                    <tr>
-                        <td>age</td>
-                        <td><input type="text" name="age" value="" /></td>
-                    </tr>
-                    <tr>
-                        <td><input type="submit" value="Submit" /></td>
-                        <td><input type="reset" value="Reset" /></td>
-                    </tr>
-                    <tr>
-                        <td colspan="2">Already registered!! <a href="patientLogin.jsp">Login Here</a></td>
-                    </tr>
-                </tbody>
-            </table>
-            </center>
-        </form>
+			<h1 class="title">Welcome to Health  System!</h1>
+                        <strong> <p><strong>Health System</strong> is a Web portal Designed by . You"re free to use it for personal use. <em>Enjoy :)</em></p>
+			<h2>Functions</h2>
+                        <p><ul><li>patients should be able to check doctor availability and book the appointment.</li>
+                            <li>Doctor can see all of his patients in a table</li>
+                             <li>Doctor will Give comments to the Patients.</li>
+                             <li>Patient Can check the Doctors</li>
+                             <li>Patient can check the available Time of the doctor</li>
+                             <li>A particular patient can see their doctor's instructions</li></ul>
+                             <blockquote>
+				<p>patients should give email id and their doctor name to access Daily instructions, given by their Doctor</p>
+                             </blockquote></strong>
 		</div>
 	</div>
 
@@ -112,7 +93,9 @@
        
         
          <script>
-
+function A(url )
+{window.open(url,'popupWindow', 'scrollbars=yes');
+}
 </script>
 
 <div id="sidebar">

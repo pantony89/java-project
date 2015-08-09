@@ -1,9 +1,11 @@
 <%-- 
-    Document   : patientReg
-    Created on : 4-Aug-2015, 8:05:33 PM
+    Document   : commentretirve
+    Created on : 8-Aug-2015, 4:16:49 PM
     Author     : c0633176
 --%>
 
+<%@page import="java.sql.ResultSet"%>
+<%@page import="com.Database"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -25,11 +27,13 @@
 	
     <div id="menu">
 <ul>
-  <li><a href="main.html">Home</a></li>
+  <li><a href="index.jsp">Home</a></li>
   <li><a href="doctorLogin.jsp">doctor</a></li>
   <li><a href="patientApp.jsp">patient</a></li>
   <li><a href="contact.jsp">Contact</a></li>
   <li><a href="about.jsp">About</a></li>
+  
+  
 </ul>
 	</div>
     </div>
@@ -41,6 +45,7 @@
 <div id="page">
 	<div id="splash" class="twocols">
 		<div class="col1">
+                    
 			<h2 class="title">Health Care</h2>
 			<p >Health care is the diagnosis,treatment,and prevention of disease, illness, injury, and other physical and mental impairments in humans.  <a href="JavaScript:A('http://en.wikipedia.org/wiki/Health_care');"> Read more&hellip;</a></p>
 		</div>
@@ -54,57 +59,30 @@
 		</div>
 		<div style="clear: both;">&nbsp;</div>
 	</div>
-  
+  <style>
+                        
+      #con{
+          
+          padding-left:4em;
+      }         
+                    </style>
 	<div id="content">
-		<div>
-	<form method="post" action="pReg">
-            <center>
-            <table >
-                <thead>
-                    <tr>
-                        <th colspan="2">Patient Registration</th>
-                    </tr>
-                </thead>
-                <tbody>
+		<div id="con">
                     
-                        <td>Name</td>
-                        <td><input type="text" name="name" value="" required /></td>
-                    </tr>
-                    <tr>
-                        <td>Email</td>
-                        <td><input type="text" name="email" value="" /></td>
-                    </tr>
-                    <tr>
-                        <td>User Name</td>
-                        <td><input type="text" name="uname" value="" /></td>
-                    </tr>
-                    <tr>
-                        <td>Password</td>
-                        <td><input type="password" name="pass" value="" /></td>
-                    </tr>
-                    <tr>
-                        <td>decease</td>
-                        <td><input type="text" name="decease" value="" /></td>
-                    </tr>
-                    <tr>
-                        <td>gender</td>
-                        <td><input type="text" name="gender" value="" /></td>
-                    </tr>
-                    <tr>
-                        <td>age</td>
-                        <td><input type="text" name="age" value="" /></td>
-                    </tr>
-                    <tr>
-                        <td><input type="submit" value="Submit" /></td>
-                        <td><input type="reset" value="Reset" /></td>
-                    </tr>
-                    <tr>
-                        <td colspan="2">Already registered!! <a href="patientLogin.jsp">Login Here</a></td>
-                    </tr>
-                </tbody>
-            </table>
-            </center>
-        </form>
+                    <h2> Doctor Instructions</h2>
+	  <%
+            Database d=new Database();
+            ResultSet r=d.retriveComment(request.getParameter("email"), request.getParameter("doc"));
+            while(r.next()){
+                out.println("<h2>Doc : "+r.getString("docname")+"</h2><h3> Instruction: "+r.getString("comments")+"</h3>");
+                
+            }
+        %>
+        <br><p> Go Back: <a href="patientApp.jsp">Back</a><p> <br>
+            <p><a href="Lockout.jsp">logout
+  </p>
+            <br><br>
+        
 		</div>
 	</div>
 

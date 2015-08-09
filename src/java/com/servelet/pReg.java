@@ -87,11 +87,11 @@ public class pReg extends HttpServlet {
      
       patientReg pr=new patientReg(pName,email,pass,uName,decease,gender,age);
        db.insertPatient(pr);
-       request.getRequestDispatcher("patientLogin.jsp").forward(request, response);
+       request.getRequestDispatcher("patientApp.jsp").forward(request, response);
        } 
        else{
        request.setAttribute("errorMessage", "you left some field ");
-                request.getRequestDispatcher("patientReg.jsp").forward(request, response);
+                request.getRequestDispatcher("patientApp.jsp").forward(request, response);
    }
    
    }

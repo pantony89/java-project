@@ -86,7 +86,7 @@ public class pApp extends HttpServlet {
      
      
        db.insertPtApp(ptName,age,gender,docName,aptDate,time,email,diagnosis);
-       request.getRequestDispatcher("patientLogin.jsp").forward(request, response);
+       request.getRequestDispatcher("patientApp.jsp").forward(request, response);
        } 
        else{
        request.setAttribute("errorMessage", "you left some field ");

@@ -1,9 +1,10 @@
 <%-- 
-    Document   : patientReg
-    Created on : 4-Aug-2015, 8:05:33 PM
+    Document   : retrivecommentbyemailid_doc
+    Created on : 8-Aug-2015, 4:09:42 PM
     Author     : c0633176
 --%>
-
+<%@page import="java.util.LinkedList"%>
+<%@page import="com.Database"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -25,7 +26,7 @@
 	
     <div id="menu">
 <ul>
-  <li><a href="main.html">Home</a></li>
+  <li><a href="index.jsp">Home</a></li>
   <li><a href="doctorLogin.jsp">doctor</a></li>
   <li><a href="patientApp.jsp">patient</a></li>
   <li><a href="contact.jsp">Contact</a></li>
@@ -54,57 +55,36 @@
 		</div>
 		<div style="clear: both;">&nbsp;</div>
 	</div>
-  
+  <style>
+                        
+      #con{
+          
+          padding-left:4em;
+      }         
+                    </style>
 	<div id="content">
-		<div>
-	<form method="post" action="pReg">
-            <center>
-            <table >
-                <thead>
-                    <tr>
-                        <th colspan="2">Patient Registration</th>
-                    </tr>
-                </thead>
-                <tbody>
+		<div id="con">
                     
-                        <td>Name</td>
-                        <td><input type="text" name="name" value="" required /></td>
-                    </tr>
-                    <tr>
-                        <td>Email</td>
-                        <td><input type="text" name="email" value="" /></td>
-                    </tr>
-                    <tr>
-                        <td>User Name</td>
-                        <td><input type="text" name="uname" value="" /></td>
-                    </tr>
-                    <tr>
-                        <td>Password</td>
-                        <td><input type="password" name="pass" value="" /></td>
-                    </tr>
-                    <tr>
-                        <td>decease</td>
-                        <td><input type="text" name="decease" value="" /></td>
-                    </tr>
-                    <tr>
-                        <td>gender</td>
-                        <td><input type="text" name="gender" value="" /></td>
-                    </tr>
-                    <tr>
-                        <td>age</td>
-                        <td><input type="text" name="age" value="" /></td>
-                    </tr>
-                    <tr>
-                        <td><input type="submit" value="Submit" /></td>
-                        <td><input type="reset" value="Reset" /></td>
-                    </tr>
-                    <tr>
-                        <td colspan="2">Already registered!! <a href="patientLogin.jsp">Login Here</a></td>
-                    </tr>
-                </tbody>
-            </table>
-            </center>
+                    <h2> Check your Status here</h2>
+	<form action="patientComment.jsp" method="post">
+            <%
+                    Database d=new Database();
+                    LinkedList<String> doc=d.docList();
+                    LinkedList<String> time=d.getDocTime();
+                %>
+                Email:  <input type="email" name="email" required/><br><br>
+            Doctor Name: <select name="doc" required>
+                <%
+                    for(int i=0;i<doc.size();i++){
+                        out.println("<option value='"+doc.get(i)+"'>"+doc.get(i)+"</option>");
+                    }
+                %>
+            </select>
+            <br><br><input type="submit" value="Submit"/>
+             <input type="reset" value="reset"/>
         </form>
+            <br> <p>Book your appointment..<a href="ptAppointment.jsp"><strong>Click here</Strong></a></p>
+                 
 		</div>
 	</div>
 

@@ -18,6 +18,7 @@ import java.util.LinkedList;
  *
 
  */
+/*  Database Connection----------*/
 public class Database {
     String url="jdbc:as400:174.79.32.158";
     String userName="IBM87";
@@ -39,6 +40,7 @@ public class Database {
         return con;
     }   
     
+    /*---------method for Doctor Regisration-------------------*/
    public void insertDoc(doctor d){
    
        try {
@@ -60,6 +62,10 @@ public class Database {
        
      
    }
+   
+   
+   /*method for Patient Appoint ment Regisration-----------*/
+   
    public void insertPatient(patientReg p){
        try {
             Connection con =getConnection();
@@ -77,6 +83,8 @@ public class Database {
            System.err.println(e);
        }
    }
+   
+   /*-------------method for Doctor LogIn-----------------------*/
    public boolean dLogin(String Doctorid,String pass){
        
        boolean status=false;
@@ -101,6 +109,8 @@ public class Database {
        return status;
        }
    
+   /* method for Retrive Doctors from Database------------*/
+   
    public LinkedList<String> docList(){
        LinkedList<String> listOfDoc=new LinkedList<String>();
        try {
@@ -118,6 +128,8 @@ public class Database {
        return listOfDoc;
        }
    
+   /*--------------method for retrive Doctor Time From database---------------*/
+   
    public LinkedList<String> getDocTime(){
        LinkedList<String> timing=new LinkedList<String>();
        try {
@@ -134,6 +146,8 @@ public class Database {
        }
        return timing;
        }
+   
+   /*------------------registration for patient Appointment-------*/
     public void insertPtApp(String pName,String age,String sex,String doc_name,String apt_date,String apt_time,String mailid,String Diagnosis){
        try {
             Connection con =getConnection();
@@ -154,6 +168,7 @@ public class Database {
        }
        
    }
+    /*----method for Desired Patient Detail from Database-----*/
     
     public ResultSet docWiseAppDetails(String doc){
         ResultSet r=null;
@@ -167,6 +182,8 @@ public class Database {
         }
         return r;
     }
+    
+    /*--------method to Retrieve Desired Doc name-----*/
     
     public String getLoginDocName(String docId){
         String docname="";
@@ -183,6 +200,8 @@ public class Database {
         return docname;
     }
     
+    /*----Method for Give comments---------*/
+    
     public void commentForPateintSick(String docname,String pt_email,String comments){
         try {
             Connection con=getConnection();
@@ -195,6 +214,7 @@ public class Database {
             
         }
     }
+    /*------------------method retrive the comments----*/
     
     public ResultSet retriveComment(String ptName, String doc){
         ResultSet rs=null;

@@ -12,14 +12,14 @@
 <div id="header">
 	<div id="logo">
             <img src="images/logo1.jpg">
-		<h1>Health Care System</h1>
+		<h1>Health System</h1>
 		<h2>The Complete care is  now Here</h2>
 	
     <div id="menu">
 <ul>
-  <li><a href="main.html">Home</a></li>
+  <li><a href="index.jsp">Home</a></li>
   <li><a href="doctorLogin.jsp">doctor</a></li>
-  <li><a href="patient.jsp">patient</a></li>
+  <li><a href="patientApp.jsp">patient</a></li>
   <li><a href="contact.jsp">Contact</a></li>
   <li><a href="about.jsp">About</a></li>
 </ul>
@@ -37,36 +37,10 @@
 			<p >Health care is the diagnosis,treatment,and prevention of disease, illness, injury, and other physical and mental impairments in humans.  <a href="JavaScript:A('http://en.wikipedia.org/wiki/Health_care');"> Read more&hellip;</a></p>
 		</div>
 		<div class="col2">
-			<h2 class="title">Important</h2>
+			<h2 class="title">About US</h2>
+                        <p>This application is all about to ease the difficulties of the health systems,this project is in under5 development</p>
 			
-<form method="post" action="docLogin">
-            <center>
-            <table  cellpadding="3">
-                <thead>
-                    <tr>
-                        <th colspan="2">Doctor Login Here</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Doctor ID</td>
-                        <td><input type="text" name="docid" value=""  required/></td>
-                    </tr>
-                    <tr>
-                        <td>Password</td>
-                        <td><input type="password" name="pass" value="" required /></td>
-                    </tr>
-                    <tr>
-                        <td><input type="submit" value="Login" /></td>
-                        <td><input type="reset" value="Reset" /></td>
-                    </tr>
-                    <tr>
-                        <td colspan="2">Yet Not Registered!! <a href="doctorReg.jsp">Register Here</a></td>
-                    </tr>
-                </tbody>
-            </table>
-            </center>
-        </form>
+
 			
 		</div>
 		<div style="clear: both;">&nbsp;</div>

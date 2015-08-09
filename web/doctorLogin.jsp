@@ -25,9 +25,9 @@
 	
     <div id="menu">
 <ul>
-  <li><a href="main.html">Home</a></li>
+  <li><a href="index.jsp">Home</a></li>
   <li><a href="doctorLogin.jsp">doctor</a></li>
-  <li><a href="patient.jsp">patient</a></li>
+  <li><a href="patientApp.jsp">patient</a></li>
   <li><a href="contact.jsp">Contact</a></li>
   <li><a href="about.jsp">About</a></li>
 </ul>
